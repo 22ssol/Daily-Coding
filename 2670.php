@@ -5,25 +5,17 @@ for($i=0 ; $i<$number ; $i++){
     fscanf(STDIN, "%f", $num_Arr[]);
 }
 
-$final_max = 0;
+$final_max = -1;
+$multi = 1;
 
 for($j=0;$j<$number;$j++){
+    $multi *= $num_Arr[$j];
 
-    if($num_Arr[$j] >= $number-1){
-        $num_Arr[$j+1] = 1;
-        $num_Arr[$j+2] = 1;
+    if($multi > $final_max){
+        $final_max = $multi;
     }
-    $num1 = $num_Arr[$j] * $num_Arr[$j+1];
-
-
-    if($num_Arr[$j] > $final_max){
-        $final_max = $num_Arr[$j];
-=
-        if($final_max < $final_max*$num_Arr[$j+2]){
-            $final_max = $final_max*$num_Arr[$j+2];
-        }
-        =
-
+    if($multi < 1){
+        $multi = 1.0;
     }
 
 }
