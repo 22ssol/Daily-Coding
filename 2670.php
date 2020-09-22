@@ -10,7 +10,7 @@ $final_max = 0;
 for($j=0;$j<$number;$j++){
     $multi = 1;
 
-    for($k=$j;$k<$num_Arr;$k++){
+    for($k=$j ; $k<$number ; $k++){
         $multi *= $num_Arr[$k];
 
         if($final_max < $multi){
