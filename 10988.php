@@ -15,6 +15,6 @@ for ($i = 0; $i < strlen($word); $i++) {
 }
 
 echo $result;
-
+?>
 
 
