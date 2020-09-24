@@ -8,7 +8,7 @@ natcasesort($arr_word); //문자열 오름차순 정렬
 
 $arr_word2 = array_count_values($arr_word); // 알파벳별 갯수
 //echo count($arr_word2);
-print_r($arr_word2);
+//print_r($arr_word2);
 $word_value = array_values($arr_word2); // value배열
 $word_key  = array_keys($arr_word2); // key 배열
 
@@ -20,6 +20,11 @@ for($i=0;$i<count($arr_word2);$i++){ //총 알파벳 갯수만큼 돌기
     if($word_value[$i] % 2 == 1){
         $hole = $hole +1;
         $mid_word = $word_key[$i];
+    //    echo $mid_word."::";
+
+    }else{
+        $mid_word= $mid_word;
+       // echo $mid_word."::";
     }
 
     for ($j = 0; $j < intval($word_value[$i] / 2); $j++) { //
@@ -35,10 +40,10 @@ for($i=0;$i<count($arr_word2);$i++){ //총 알파벳 갯수만큼 돌기
         exit;
     }
 }
-echo ">".$final_word.">".$mid_word;
+//echo ">".$final_word.">".$mid_word;
 $revelse_word = strrev($final_word);
 //echo $final_word. "            ".$revelse_word;
-//echo $final_word.$mid_word.strrev($final_word);
+echo $final_word.$mid_word.strrev($final_word);
 ?>
 
 
