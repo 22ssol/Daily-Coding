@@ -7,7 +7,7 @@ $num1 = array();
 $num2 = array();
 $visit = array();
 
-for ($i = 0; $i < $n; $i++) {
+for ($i = 0; $i < $n+1; $i++) { // 컴퓨터와 배열 번호 맞추기 위해 +1만큼 반복
     $visit[$i] = 0;
 }
 for ($i = 0; $i < $s; $i++) {
@@ -33,9 +33,10 @@ for ($i = 0; $i < $s; $i++) {
 //print_r($num1);
 
 function find($target){
-    global $temp, $num1,$visit;
+    global $num1,$visit;
 
     for ($j = 1; $j < count($num1)+1; $j++) {
+        if(isset($visit[$j])){
         if ($target == $j && $visit[$j] == 0){
             $visit[$j] = 1;
 
@@ -43,14 +44,15 @@ function find($target){
                 find($num1[$j][$k]);
             }
         }
+        }
 
     }
 
 }
 
 find(1);
-
 $values = array_count_values($visit);
 
 echo $values[1] -1;
+
 ?>
