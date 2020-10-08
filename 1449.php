@@ -14,18 +14,10 @@ $s = $location[0]; // 시작점
 
 for($i=0;$i<$n;$i++){ // 물 새는 위치만큼 반복
 
-    $min = $location[$i] - 1 ; //물 막는 곳 최소
-    $max = $min + $l; // 물 막는 곳 최대
-
-    if($min < $s ){ // 최소 < 시작점
-       // $count ++;
-        if($max > $location[$i+1]){
-            $s = $location[$i+2];
-            $count ++;
-        }
+    if($s <= $location[$i]){
+        $count ++;
+        $s = $location[$i+1] +$l-1;
     }
-
-
 }
 
 echo $count;
