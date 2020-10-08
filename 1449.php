@@ -12,12 +12,15 @@ print_r($location);
 $count = 0;
 
 for($i=0;$i<$n;$i++){ // 물 새는 위치만큼 반복
-    $min = $location[$i] - 0.5 ; //물 새는 곳 최소
+    $s = $location[$i]; // 시작점
+    $min = $location[$i] - 1 ; //물 새는 곳 최소
     $max = $min + $l; // 물 새는 곳 최대
-   // echo $min."---";
 
-    if($min < $location[$i+1] && $location[$i+1] < $max ){ // 최소 < 다음길이 && 다음길 < 최대 일 때
+    if($min < $s ){ // 최소 < 시작점
+
+        echo $s;
         $count ++; // 테이프 사용 추가
+        $s = $location[$i+1];
     }
 
 }
