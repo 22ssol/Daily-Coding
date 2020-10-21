@@ -14,19 +14,18 @@ for($i=0;$i<count($music);$i++){
     }
 }
 
-
 if($minor == $major){
-    $arr_last=array_pop($music); // 마지막 배열값
-    $last_note = substr($arr_last,0,1);
+    $last_arr=array_pop($music); // 마지막 배열값
+    $last_note = substr($last_arr,-1);
 
     if($last_note == 'A' || $last_note == 'D' || $last_note == 'E'){
-        echo "A-minor";
+        print("A-minor");
     }else if($last_note == 'C' || $last_note == 'F' || $last_note == 'G') {
-        echo "C-major";
+        print("C-major");
     }
-}else if($minor>$major){
-    echo "A-minor";
+}else if($minor > $major){
+    print("A-minor");
 }else{
-    echo "C-major";
+    print("C-major");
 }
 ?>
