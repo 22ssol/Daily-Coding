@@ -1,7 +1,7 @@
 <?php
 fscanf(STDIN, "%d", $n);
 $money = 1000 -$n;
-$change = [500,100,50,10,1];
+$change = [500,100,50,10,5,1];
 $result = 0;
 
 for($i=0;$i<count($change);$i++){
