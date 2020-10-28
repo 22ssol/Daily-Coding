@@ -2,16 +2,14 @@
 
 fscanf(STDIN, "%d", $n);
 
-$cha = 'A';
+$a = array(1,0);
+$b = array(0,1);
 
-for($i=0;$i<$n;$i++){
-    if(substr($cha, -1) == 'A'){
-        $cha = $cha."B";}
-    else if(substr($cha, -1) == 'B'){
-        $cha = $cha."BA";
-    }
-
+for($i=0;$i<$n-1;$i++){
+    array_push( $a, $a[$i]+$a[$i+1] );
+    array_push( $b, $b[$i]+$b[$i+1] );
 }
 
-echo $cha;
+echo array_pop($a). " ". array_pop($b);
+
 ?>
