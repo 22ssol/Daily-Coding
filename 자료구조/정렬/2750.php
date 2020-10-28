@@ -7,6 +7,7 @@ for($i=0;$i<$n;$i++){
 //print_r($num);
 //echo sort($num);
 sort($num);  //오름차순 정렬
+
 $num2 = array_unique($num); // 중복제거
 
 
