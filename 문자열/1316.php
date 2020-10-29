@@ -16,6 +16,9 @@ for($i=0;$i<$n;$i++) {
     }
     array_push($group,$temp);
 }
+for($i=0;$i<$n;$i++) {
+
+}
 print_r($group);
 
 ?>
