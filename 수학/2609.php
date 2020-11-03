@@ -1,26 +1,37 @@
 <?php
-fscanf(STDIN, "%d %d", $n1, $n2);
-$a =0;
-$b=0;
-$n=0;
-if($n1 > $n2){
-    $a = $n1;
-    $b = $n2;
-}else{
-    $a = $n2;
-    $b = $n1;
+fscanf(STDIN, "%d", $n);
+$n1 = array();
+$n2 = array();
+$gcm = array();
+
+for ($i = 0; $i < $n; $i++) {
+    fscanf(STDIN, "%d %d", $n1[], $n2[]);
 }
 
-while($b != 0){ //유클리드 알고리즘(최대공약수 구하는 알고리즘)
-    $n = $a % $b;
-    $a = $b;
-    $b = $n;
+for ($i = 0; $i < $n; $i++) {
+    $max = 0;
+    $min = 0;
+    $temp = 0;
+
+    if ($n1[$i] > $n2[$i]) {
+        $max = $n1[$i];
+        $min = $n2[$i];
+    } else {
+        $max = $n2[$i];
+        $min = $n1[$i];
+    }
+
+
+    while ($min != 0) { //유클리드 알고리즘(최대공약수 구하는 알고리즘)
+        $temp = $max % $min;
+        $max = $min;
+        $min = $temp;
+    }
+    array_push($gcm, $max);
+    $lcm = $n1[$i] * $n2[$i] / $gcm[$i]; //최소공배수
+    print($lcm."\n");
+
 }
 
-$gcm = $a; //최대공약수
-
-$lcm = $n1 * $n2 / $a; //최소공배수
-
-print($gcm."\n".$lcm);
 
 ?>
