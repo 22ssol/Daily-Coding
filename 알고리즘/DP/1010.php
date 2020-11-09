@@ -8,7 +8,7 @@ for($i=0;$i<$t;$i++){
 }
 
 for($j=0;$j<$t;$j++){
-   echo fac($m[$j]) / fac($n[$j]) * fac($m[$j] - $n[$j])."\n";
+   echo fac($m[$j]) / (fac($n[$j]) * fac($m[$j] - $n[$j]))."\n";
 
 }
 function fac($n){
