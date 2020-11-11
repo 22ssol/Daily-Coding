@@ -11,13 +11,18 @@ for($i=0;$i<$n;$i++){
 
 for($i=$n-1;$i>=1;$i--) {
     $dap = 0;
-    //echo $score[$i]. " ". $score[$i-1]."\n";
     if($score[$i]<$score[$i-1]){
         $dap = $score[$i-1] - $score[$i] + 1;
         $score[$i-1] = $score[$i] -1;
         $hap = $hap + $dap;
 
+    }else if($score[$i]==$score[$i-1]){
+        $dap = $dap + 1;
+        $score[$i-1] = $score[$i] -1;
+        $hap = $hap + $dap;
     }
+
 }
+
 echo $hap;
 ?>
